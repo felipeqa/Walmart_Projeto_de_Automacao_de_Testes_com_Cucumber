@@ -5,10 +5,10 @@ end
 
 Quando(/^eu preencher todas as informações$/) do
 
-  find('#username').set.gets(user)
+@FazerLogin.acessar
 
 end
 
 Então(/^eu verifico que foi enviado com sucesso$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  assert_text ' You logged into a secure area!'
 end
