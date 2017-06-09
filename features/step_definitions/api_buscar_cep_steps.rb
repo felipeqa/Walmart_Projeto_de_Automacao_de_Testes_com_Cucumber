@@ -1,35 +1,29 @@
+# force_encoding("UTF-8")
+# force_encoding(Encoding::UTF_8)
 #Cenário 1
 #Testar resultado API de CEP dos Correios válido
+
 
 Dado(/^que eu queira saber os detalhes do endereço de um cep válido "([^"]*)"$/) do |cepValido|
 	@response = HTTParty.get("http://correiosapi.apphb.com/cep/#{cepValido}")
 end
 
 Quando(/^eu receber a resposta da API$/) do
-	puts @response.body
+	puts @response.body.force_encoding(Encoding::UTF_8)
 	puts @response.code
 end
 
-Então(/^devo validar cep, tipo de logradouro, logradouro, bairro, cidade,estado e o response code\.$/) do
-	puts @response.code
+Então(/^devo validar cep, tipo de logradouro, logradouro, bairro, cidade,estado e o response code.$/) do
 	puts @response['cep']
 	puts @response['tipoDeLogradouro']
 	puts @response['logradouro'] 
 	puts @response['bairro']
 	puts @response['cidade']
 	puts @response['estado']
+	puts @response.code
 
-
-	#puts @response.code == 200 && @response['cep'] == '06342080' && @response['tipoDeLogradouro'] == 'Rua' && @response['logradouro'] == 'Maria José Ferreira' && @response['bairro'] == 'Jardim Helena' && @response['cidade'] == 'Carapicuíba' && @response['estado'] == 'SP'
-	if @response.code == 200
-	elsif @response['cep'] == '06342080'
-		puts 'CEP validado'
-	elsif @response['tipoDeLogradouro'] == 'Rua'
-		puts 'Tipo de Logradouro validado'
-	end
-			
-			
-
+	puts @response.code == 200 && @response['cep'] == '06342080' && @response['tipoDeLogradouro'] == 'Rua' && @response['logradouro'] == 'Maria José Ferreira' && @response['bairro'] == 'Jardim Helena' && @response['cidade'] == 'Carapicuíba' && @response['estado'] == 'SP'
+	
 	if	true
 		puts 'Detalhe de endereço e response code validado com sucesso'
 	 else

@@ -3,13 +3,36 @@ class FazerLogin < SitePrism::Page
 
   def  acessar
 	@Login = Login.new
-	puts "Olá usuário, tudo bem? Por favor, insira o user name tomsmith, ou se preferir copie daqui ==>  tomsmith  "
+
+	user = 'Sem user'
+	while user != 'tomsmith'
+
+	puts 'Olá usuário, tudo bem? Por favor, utilize o username tomsmith, ou se preferir copie daqui ==>   tomsmith    '
 	user = STDIN.gets.strip
+
+		if user != 'tomsmith'
+			puts "ERROR, você digitou #{user}! Username incorreto, não esqueça que o usuário correto é tomsmith, vamos tentar novamente?"
+			sleep 2
+		end	
+	end
+
 	@Login.user_name.set user
-	puts "Ok #{user}, agora iremos colocar a senha SuperSecretPassword! ou se preferir copie daqui ==>    SuperSecretPassword!   "
+
+	senha = 'sem senha'
+	while senha != 'SuperSecretPassword!'
+
+	puts "Ok #{user}, agora utilize a senha SuperSecretPassword! ou se preferir copie daqui ==>    SuperSecretPassword!    <== e não esqueça da !!!!!  "
 	senha = STDIN.gets.strip
+
+		if senha != 'SuperSecretPassword!'
+			puts "ERROR, você digitou #{senha}! Senha incorreta, não esqueça que a senha correta é SuperSecretPassword!, vamos tentar novamente?"
+			sleep 2 
+		end	
+	end
+
 	@Login.password.set senha
 	@Login.login_button.click
+
   end
 end
 
