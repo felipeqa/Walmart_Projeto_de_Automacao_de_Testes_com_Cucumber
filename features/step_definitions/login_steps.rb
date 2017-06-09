@@ -1,14 +1,35 @@
-Dado(/^que eu esteja na pagina de login$/) do
+#Cenário 1 - Login com Sucesso
+Dado(/^que eu esteja na pagina inicial de login$/) do
   @FazerLogin = FazerLogin.new
   @FazerLogin.load
 end
 
-Quando(/^eu preencher todas as informações$/) do
-
-@FazerLogin.acessar
-
+Quando(/^eu preencher meus dados e acessar$/) do
+  @FazerLogin.acessar
 end
 
-Então(/^eu verifico que foi enviado com sucesso$/) do
+Então(/^eu verifico que o acesso foi feito com sucesso$/) do
   assert_text ' You logged into a secure area!'
+end
+
+Quando(/^fazer o logoff do sistema$/) do
+  find(:xpath, '//*[@id="content"]/div/a').click
+end
+
+Então(/^eu verifico que o logoff foi feito com sucesso$/) do
+  assert_text ' You logged out of the secure area!'
+end
+
+Quando(/^eu preencher meu usuário "([^"]*)" e senha "([^"]*)"$/) do |usuario, senha|
+  @LoginAutomatizado = LoginAutomatizado.new
+  @LoginAutomatizado.automatizado usuario, senha
+end
+
+Quando(/^eu preencher um usuário inválido com senha aleatória$/) do
+  @LoginInvalido = LoginInvalido.new
+  @LoginInvalido.usuario_invalido
+end
+
+Então(/^eu verifico que o usuário não possui acesso$/) do
+  assert_text 'Your username is invalid!'
 end

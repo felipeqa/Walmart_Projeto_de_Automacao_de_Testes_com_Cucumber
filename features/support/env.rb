@@ -3,10 +3,8 @@ require 'httparty'
 require 'cucumber'
 require 'selenium/webdriver'
 require 'capybara/dsl'
-require 'pry'
 require 'site_prism'
 require 'faker'
-require	'blabla'
 
 include Capybara::DSL
 
