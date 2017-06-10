@@ -36,7 +36,8 @@ Windows
 
 <h3>3. Instalando Devkit</h3>	
 
-* 	Baixe em: <http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe> .
+*	Baixe em (x86): >https://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe>.
+* 	Baixe em (x64): <http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe>.
 *	Acesse o diretório C:\Ruby23-x64.
 *	Crie uma pasta chamada devkit e coloque o arquivo baixado dentro dessa pasta.
 *	Clique duas vezes no arquivo para que ele descompate os arquivos na pasta que foi criada.
