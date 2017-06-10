@@ -1,25 +1,29 @@
-Arquitetura do projeto
-Configurando sua máquina
-• Necessário instalar:
-• Ruby for Windows: linguagem de programação utilizada nos testes.
-• cmder for Windows: Sistema que trás as funcionalidades bash (Terminal) para
-o Windows.
-• DevKit: Kit de ferramentas que o sistema operacional precisa para que o
-desenvolvimento funcione.
-• Chromedriver: Driver do navegador que será utilizado na automação.
-Disponível no site do seleniumhq.org
-• Atom: Editor de texto com funções úteis para escrever o código da
-automação de testes.
+<h1>Arquitetura do projeto</h1>
+=================================
+
+<h3>Configurando sua máquina</h3>
+==================================
+
+Necessário instalar:
+-----------------------
+
+*	Ruby for Windows: linguagem de programação utilizada nos testes.
+*	Cmder for Windows: Sistema que trás as funcionalidades bash (Terminal) para o Windows.
+*	DevKit: Kit de ferramentas que o sistema operacional precisa para que o desenvolvimento funcione.
+*	Chromedriver: Driver do navegador que será utilizado na automação. Disponível no site do <https://sites.google.com/a/chromium.org/chromedriver/downloads>
+*	Atom: Editor de texto com funções úteis para escrever o código da automação de testes.
 
 
-Configurando o ambiente de automação
-de testes Web
-Para que sua automação possa ser realizada é necessário instalar alguns recursos (Disponíveis na
-pasta Úteis desse projeto), conforme será descrito abaixo, para cada plataforma:
+<h3>Configurando o ambiente de automação de testes Web</h3>
+------------------------------------------------------------
+
+Para que sua automação possa ser realizada é necessário instalar alguns recursos, conforme será descrito abaixo:
+
 Windows
+-------
 1. Instalando o Console do Cmder
-● baixe em: https://github.com/cmderdev/cmder/releases/download/v1.3.2/cmder.zip .
-● Descompactar na pasta C:\tools\Cmder.
+*	Baixe em: <https://github.com/cmderdev/cmder/releases/download/v1.3.2/cmder.zip> .
+*	Descompactar na pasta C:\tools\Cmder.
 ● Selecione o cmder.exe e arrastar até sua barra de ferramentas do Windows para criar um
 atalho.
 ● Executar o cmder.exe.

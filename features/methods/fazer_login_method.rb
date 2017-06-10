@@ -11,7 +11,7 @@ class FazerLogin < SitePrism::Page
 	user = STDIN.gets.strip
 
 		if user != 'tomsmith'
-			puts "ERROR, você digitou #{user}! Username incorreto, não esqueça que o usuário correto é tomsmith, vamos tentar novamente?"
+			puts "ERROR, você digitou #{user} ? Username incorreto, não esqueça que o usuário correto é tomsmith, vamos tentar novamente?"
 			sleep 2
 		end	
 	end
@@ -25,7 +25,7 @@ class FazerLogin < SitePrism::Page
 	senha = STDIN.gets.strip
 
 		if senha != 'SuperSecretPassword!'
-			puts "ERROR, você digitou #{senha}! Senha incorreta, não esqueça que a senha correta é SuperSecretPassword!, vamos tentar novamente?"
+			puts "ERROR, você digitou #{senha} ? Senha incorreta, não esqueça que a senha correta é SuperSecretPassword!, vamos tentar novamente?"
 			sleep 2 
 		end	
 	end
