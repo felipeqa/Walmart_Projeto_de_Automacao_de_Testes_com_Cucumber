@@ -15,7 +15,7 @@ Cenário: Acessar Login Page
 	Então eu verifico que o acesso foi feito com sucesso
 
 @logoffmanual @front
-Cenário: Acessar Login Page
+Cenário: Fazer logoff
 	Quando eu preencher meus dados e acessar
 	E fazer o logoff do sistema
 	Então eu verifico que o logoff foi feito com sucesso

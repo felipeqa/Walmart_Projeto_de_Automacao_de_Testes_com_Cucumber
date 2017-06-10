@@ -1,4 +1,4 @@
-#Cenário 1 - Login com Sucesso
+
 Dado(/^que eu esteja na pagina inicial de login$/) do
   @FazerLogin = FazerLogin.new
   @FazerLogin.load
