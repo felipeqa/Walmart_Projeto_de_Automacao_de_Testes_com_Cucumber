@@ -23,11 +23,11 @@ Windows
 <h3>1. Instalando o Console do Cmder</h3>
 
 *	Baixe em: <https://github.com/cmderdev/cmder/releases/download/v1.3.2/cmder.zip> .
-*	Descompactar na pasta C:\tools\Cmder.
+*	Descompactar na pasta C:\Cmder.
 *	Selecione o cmder.exe e arrastar até sua barra de ferramentas do Windows para criar um atalho.
 *	Executar o cmder.exe.
 
-<h3>2. Instalando o Ruby para Windows de acordo com a versão do seu sistema operacional x86 (32bits) ou x64 (64bits)</h3>
+<h3>2. Instalando o Ruby para Windows de acordo com a versão do seu sistema operacional e arquitetura x86 (32bits) ou x64 (64bits)</h3>
 
 *	Baixe em: <http://rubyinstaller.org/downloads/>.
 *	Executar o arquivo baixado e seguir as instruções clicando em ‘next’.
@@ -38,7 +38,7 @@ Windows
 
 * 	Baixe em: <http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe> .
 *	Acesse o diretório C:\Ruby23-x64.
-*	Crie uma pasta chamada devKit e coloque o arquivo baixado dentro dessa pasta.
+*	Crie uma pasta chamada devkit e coloque o arquivo baixado dentro dessa pasta.
 *	Clique duas vezes no arquivo para que ele descompate os arquivos na pasta que foi criada.
 *	No Console do Cmder, digite os comandos:
 
@@ -74,6 +74,30 @@ Baixe em: <https://sites.google.com/a/chromium.org/chromedriver/downloads> .
 
 E pronto, ambiente configurado.
 
+Clonando o repositório do git para execução dos teste
+------------------------------------------------------
+
+<h3>Selecionando o destino para o clone do projeto</h3>
+
+*	Navegue no Cmder até a pasta em que você achar mais apropriada para ser feito o clone do projeto, como exemplo vou utilizar a pasta projetos dentro de C:.
+```bash
+cd/
+cd projetos
+```
+
+<h3>Clonando o repositório </h3>
+
+*	No Console do Cmder, digite o comando:
+
+````bash
+git clone https://github.com/felipeqa/Walmart_Projeto_de_Automacao_de_Testes_com_Cucumber.git
+
+````
+Como é possível ver, a estrutura do comando é "git clone [endereço do repositório] .
+
+Feito isso, temos um clone do projeto para que possamos trabalhar e executar os testes automatizados.
+
+
 Automação de Testes
 --------------------
 
@@ -89,6 +113,11 @@ cd C:\Projetos\Walmart_Projeto_de_Automacao_de_Testes_com_Cucumber
 gem install bundler
 bundle
 ```
+
+O resultado é:
+
+* ![Passo 1](readme_img/cmder_print.jpg)
+
 ##########################CONTINUA##################################
 Aprendendo a usar o env.rb
 • O env.rb inicializa
