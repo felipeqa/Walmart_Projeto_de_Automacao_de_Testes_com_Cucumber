@@ -180,7 +180,7 @@ Resultado:
 
 Todos os testes são executados.
 
-*	Para execução de algum cenário específico ou utilizamos as tags:
+*	Para execução de algum cenário específico utilizamos as tags:
 ````bash
 cucumber -t @automatizadologoff
 ````
@@ -196,11 +196,13 @@ cucumber --format html --out report.html
 ````
 
 Resultado:
+
 ![Passo 3](readme_images/report.png?raw=true)
 
 Na pasta raiz do projeto é gerado um arquivo HTML com o report dos cenários de testes.
 
 Basta abrir no seu navegador e visualizar o resultado.
+
 ![Passo 4](readme_images/report1.png?raw=true)
 
 Report criado com screenshot ao final da execução de cada cenário.
