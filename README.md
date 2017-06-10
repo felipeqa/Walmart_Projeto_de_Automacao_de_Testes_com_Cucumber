@@ -116,58 +116,46 @@ bundle
 
 O resultado é:
 
-* ![Passo 1](readme_images/cmder_print.jpg?raw=true)
+![Passo 1](readme_images/cmder_print.jpg?raw=true)
 
-##########################CONTINUA##################################
-Aprendendo a usar o env.rb
-• O env.rb inicializa
-configurações do teste, tal
-como o navegador que deve ser
-utilizado.
-• O require sob em memória os
-arquivos das Gems necessárias.
 
-Gem SitePrism
+<h3>Aprendendo a usar o env.rb</h3>
+
+*	O env.rb inicializa configurações do teste, tal como o navegador que deve ser utilizado.
+*	O require sob em memória os arquivos das Gems necessárias.
+
+<h3>Gem SitePrism</h3>
 
 O SitePrism é uma gem do ruby que facilita no mapeamento ou organização de todos os elementos que serão utilizados no projeto de automação. Facilitando o uso do famoso padrão de projeto chamado de Page Object.
+Sua semântica/sintaxe é tão legível quanto o Capybara.
 
-Sua semântica/sintaxe é tão legível quanto o Capybara. (que nós já conhecemos)
-
-Utilizando o SitePrism...
-Para o funcionamento pleno do SitePrism, precisamos fazer as seguintes alterações em nosso projeto.
-GemFile
-gem 'site_prism', '~> 2.9’
-Env
-require 'site_prism’
-
-Dúvidas: https://rubygems.org/
-
-Gem Faker 
+<h3>Gem Faker</h3> 
 
 O Faker é um gem do Ruby que gera dados aleatórios (“fakes”) para diversos tipos de necessidades, como por exemplo:
-Nome
-Sobrenome
-Cidade
-Estado
-Telefone ...
+*	Nome
+*	Sobrenome
+*	Cidade
+*	Estado
+*	Telefone
 
-Para o funcionamento pleno do Faker, precisamos fazer as seguintes alterações em nosso projeto.
-GemFile
-gem ’faker'
-Env
-require ’faker’
-Dúvidas: https://rubygems.org/
+Para maiores informações <https://github.com/stympy/faker>
 
+<h3>Hooks.rb</h3>
 
-Hooks.rb...
 O termo hook do inglês significa gancho. E trazendo para o nosso contexto de automação, o arquivo hooks.rb é quem armazena todo o código que fará uma ação em momentos que serão estabelecidos através deste arquivo.
-Por exemplo, dois momentos em que podemos acrescentar ações antes da nossa automação iniciar, é o período antes de iniciar um teste e o período após finalizar o teste.
-O Ruby entende estes momentos quando utilizamos as seguintes palavras chaves:
-Before
-After
+Por exemplo, dois momentos em que podemos acrescentar ações em nossa automação é:
 
-Tags...
-Utilizamos a tag para diferenciar os cenários por grupos, funcionalidades ou etapas de testes. As tags são inseridas na linha de cima do nome do cenário. 
+*	Antes da nossa automação iniciar a execução, que é o período antes de um cenário de teste iniciar a execução.
+*	E após o termino da execução de um cenário, período após finalizar um cenário de teste.
+
+O Ruby entende estes momentos quando utilizamos as seguintes palavras chaves:
+
+*	Before
+*	After
+
+<h3>Utilizando Tags</h3>
+
+Utilizamos a tag para diferenciar os cenários por grupos, funcionalidades ou etapas de testes. As tags são inseridas na linha de cima do nome do cenário.
 No terminal, quando quisermos rodar os cenários que estão nomeados com tags, basta utilizarmos o seguinte comando:
 
 Cucumber –-tag @nome_da_tag
@@ -175,6 +163,64 @@ Ou
 Cucumber –t @nome_da_tag
 
 Esse comando rodará todos os cenários que tiverem a tag.
+
+Executando os testes automatizados
+-----------------------------------
+
+Para executar o testes automatizados usaremos alguns comandos a partir da pasta raiz do nosso projeto.
+
+*	Para execução de todos os cenários implementados utilizamos o seguinte código:
+````bash
+cucumber
+````
+
+Resultado:
+
+![Passo 2](readme_images/cucumber.png?raw=true)
+
+Todos os testes são executados.
+
+*	Para execução de algum cenário específico ou utilizamos as tags:
+````bash
+cucumber -t @automatizadologoff
+````
+O teste demarcado com a tag é executado.
+
+Resultado:
+
+![Passo 3](readme_images/logoff.png?raw=true)
+
+*	Para execução de todos os cenários e gerar um report em html, utilizamos o seguinte código:
+````bash
+cucumber --format html --out report.html
+````
+
+Resultado:
+![Passo 3](readme_images/report.png?raw=true)
+
+Na pasta raiz do projeto é gerado um arquivo HTML com o report dos cenários de testes.
+
+Basta abrir no seu navegador e visualizar o resultado.
+![Passo 4](readme_images/report1.png?raw=true)
+
+Report criado com screenshot ao final da execução de cada cenário.
+
+Contato
+-------
+Estou aberto a sugestões, elogios, críticas ou qualquer outro tipo de comentário. 
+
+*	E-mail: felipe_rodriguesx@hotmail.com.br
+*	Linkedin: <https://www.linkedin.com/in/luis-felipe-rodrigues-de-oliveira-2b056b5a/>
+
+Licença
+-------
+Esse código é livre para ser usado dentro dos termos da licença MIT license
+
+
+
+
+
+
 
 
 

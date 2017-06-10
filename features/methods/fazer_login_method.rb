@@ -7,7 +7,7 @@ class FazerLogin < SitePrism::Page
 	user = 'Sem user'
 	while user != 'tomsmith'
 
-	puts 'Olá usuário, tudo bem? Por favor, utilize o username tomsmith, ou se preferir copie daqui ==>   tomsmith    '
+	puts 'Olá usuário, tudo bem? Por favor, utilize o username tomsmith, ou se preferir copie daqui ==>   tomsmith    <=='
 	user = STDIN.gets.strip
 
 		if user != 'tomsmith'
