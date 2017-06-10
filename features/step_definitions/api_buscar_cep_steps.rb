@@ -14,22 +14,49 @@ Quando(/^eu receber a resposta da API$/) do
 end
 
 Então(/^devo validar cep, tipo de logradouro, logradouro, bairro, cidade,estado e o response code.$/) do
-	puts @response['cep']
-	puts @response['tipoDeLogradouro']
-	puts @response['logradouro'] 
-	puts @response['bairro']
-	puts @response['cidade']
-	puts @response['estado']
-	puts @response.code
+	if @response['cep'] == '06342080'
+		puts 'Cep validado com sucesso! ===> ' + @response['cep']
+		
+		if @response['tipoDeLogradouro'] == 'Rua'
+			puts 'Tipo de logradouro validado com sucesso! ===> ' + @response['tipoDeLogradouro']
 
-	puts @response.code == 200 && @response['cep'] == '06342080' && @response['tipoDeLogradouro'] == 'Rua' && @response['logradouro'] == 'Maria José Ferreira' && @response['bairro'] == 'Jardim Helena' && @response['cidade'] == 'Carapicuíba' && @response['estado'] == 'SP'
-	
-	if	true
-		puts 'Detalhe de endereço e response code validado com sucesso'
+			if @response['logradouro'] == 'Maria José Ferreira'
+				puts 'Logradouro validado com sucesso! ===> ' +  @response['logradouro'] 
+		 		
+		 		if @response['bairro'] == 'Jardim Helena'
+					puts 'Bairro validado com sucesso! ===> ' + @response['bairro']
+
+					if @response['cidade'] == 'Carapicuíba'
+						puts 'Cidade validada com sucesso! ===> ' + @response['cidade']
+
+								if @response['estado'] == 'SP'
+									puts 'Estado validado com sucesso! ===> '  + @response['estado']
+
+											if @response.code == 200
+													puts 'Response Code validado com sucesso! ===> ' + @response.code.to_s
+											 	else
+													puts 'Response Code diferente do previsto! ===> ' + @response.code.to_ss
+											end
+								 		else
+									puts 'Estado diferente do previsto! ===> ' + @response['estado']
+								end
+						 else
+						puts 'Cidade diferente da prevista! ===> ' + @response['cidade']
+					end
+				 else
+					puts 'Bairro diferente do previsto! ===> ' +  @response['bairro']		
+				end		
+			 else	
+				puts 'Logradouro diferente do previsto! ===> ' + @response['logradouro'] 
+			end
+		 else
+			puts 'Tipo de logradouro diferente do previsto! ===> ' + @response['tipoDeLogradouro']					
+		end
 	 else
-	 	puts 'ERROR - Investigar response body e response code'
-	end 
+		puts 'Cep diferente do previsto! ===> ' + @response['cep']	
+	end	
 end
+
 ###########################################################################################################################################
 #Cenário 2
 #Testar resultado API de CEP dos Correios válido
