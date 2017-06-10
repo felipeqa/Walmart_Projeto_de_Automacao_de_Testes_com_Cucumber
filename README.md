@@ -116,7 +116,7 @@ bundle
 
 O resultado é:
 
-* ![Passo 1](readme_img/cmder_print.jpg)
+* ![Passo 1](readme_img/cmder_print.jpg?raw=true)
 
 ##########################CONTINUA##################################
 Aprendendo a usar o env.rb
