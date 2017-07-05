@@ -70,10 +70,12 @@ No Console do Cmder, digite o comando:
 gem install bundler
 ```
 
-<h3>6. Instalando o chromedriver</h3>
+<h3>6. Instalando o chromedriver, IEdriver e Geckodriver</h3>
 
-Baixe em: <https://sites.google.com/a/chromium.org/chromedriver/downloads> .
+Baixe o chromedriver em: <https://sites.google.com/a/chromium.org/chromedriver/downloads> .
 *	Descompacte o arquivo dentro da pasta C:\Ruby23-x64\bin.
+
+Faça o mesmo para o IEdriver e o Geckodriver.
 
 E pronto, ambiente configurado.
 
