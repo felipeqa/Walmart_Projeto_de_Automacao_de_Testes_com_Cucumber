@@ -161,16 +161,16 @@ O Ruby entende estes momentos quando utilizamos as seguintes palavras chaves:
 O arquivo cucumber.yml é utilizado para definir os profiles utilizados para nossa automação.
 
 
-![Passo 7](readme_images/yml.jpg?raw=true)
+![Passo 7](readme_images/yml.png?raw=true)
 
 
 
 É possível manter um profile default (para execução padrão dos teste), neste caso o navegador padrão é o chrome e o arquivo de massas é o dev.yaml. Também é possível executar outros profiles a partir dos profiles definidos no arquivo, por exemplo:
 Quero executar os testes no internet explorer e utilizar o arquivo de massa de dados de homologação, então ficaria assim o nosso comando:
 
-´´´´bash
+````bash
 cucumber -p internet_explorer -p hmg
-´´´´
+````
 
 Os profiles podem ser usados para diversas configurações como ambiente, massa, browser, entre outros.
 
