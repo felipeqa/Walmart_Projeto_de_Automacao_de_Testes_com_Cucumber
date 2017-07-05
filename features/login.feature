@@ -31,7 +31,13 @@ Cenário: Logoff totalmente automatizado
 	E fazer o logoff do sistema
 	Então eu verifico que o logoff foi feito com sucesso
 
-@negativo @front
+@negativo @login
 Cenário: Acessar Login page com usuário inválido
 	Quando eu preencher um usuário inválido com senha aleatória
 	Então eu verifico que o usuário não possui acesso
+
+
+@negativo @senha
+Cenário: Acessar Login page com usuário inválido
+	Quando eu preencher um usuário valido
+	Então eu verifico que a senha está incorreta

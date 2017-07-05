@@ -1,1 +1,3 @@
 default: --no-source --color --format pretty
+dev: ENVIRONMENT_TYPE=dev
+hmg: ENVIRONMENT_TYPE=hmg

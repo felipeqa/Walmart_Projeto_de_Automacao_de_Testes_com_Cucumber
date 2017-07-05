@@ -8,6 +8,9 @@ require 'faker'
 
 include Capybara::DSL
 
+
+ENVIRONMENT_TYPE = ENV['ENVIRONMENT_TYPE']
+
 Capybara.register_driver :selenium do |app|
 	Capybara::Selenium::Driver.new(app, :browser => :chrome, args: ["--start-maximized"])
 end

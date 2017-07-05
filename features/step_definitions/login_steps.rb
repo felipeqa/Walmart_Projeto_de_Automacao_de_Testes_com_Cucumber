@@ -33,3 +33,12 @@ end
 Então(/^eu verifico que o usuário não possui acesso$/) do
   assert_text 'Your username is invalid!'
 end
+
+Quando(/^eu preencher um usuário valido$/) do
+  @SenhaInvalida = SenhaInvalida.new
+  @SenhaInvalida.senha_invalida
+end
+
+Então(/^eu verifico que a senha está incorreta$/) do
+   assert_text 'Your password is invalid!'
+end

@@ -39,8 +39,8 @@ end
 class LoginInvalido < SitePrism::Page
   def  usuario_invalido
 	@Login = Login.new
-	@Login.user_name.set Faker::StarWars.character
-	@Login.password.set Faker::Name.name
+	@Login.user_name.set (CONFIG['logininvalido'])
+	@Login.password.set (CONFIG['senhainvalida'])
 	@Login.login_button.click
   end
 end
@@ -50,6 +50,15 @@ class LoginAutomatizado < SitePrism::Page
 	@Login = Login.new
 	@Login.user_name.set usuario
 	@Login.password.set senha
+	@Login.login_button.click
+  end
+end
+
+class SenhaInvalida < SitePrism::Page
+  def  senha_invalida
+	@Login = Login.new
+	@Login.user_name.set (CONFIG['loginvalido'])
+	@Login.password.set (CONFIG['senhaaleatoria'])
 	@Login.login_button.click
   end
 end
