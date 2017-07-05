@@ -9,6 +9,8 @@ Necessário instalar:
 *	Cmder for Windows: Sistema que trás as funcionalidades bash (Terminal) para o Windows.
 *	DevKit: Kit de ferramentas que o sistema operacional precisa para que o desenvolvimento funcione.
 *	Chromedriver: Driver do navegador que será utilizado na automação. Disponível no site do <https://sites.google.com/a/chromium.org/chromedriver/downloads>.
+*	GeckoDriver: Driver do navegador Firefox. Disponível no site <https://github.com/mozilla/geckodriver/releases> .
+* 	IEdriver: Driver do navegador Internet Explorer. Disponível no site <http://selenium-release.storage.googleapis.com/3.4/IEDriverServer_Win32_3.4.0.zip> versão 32bits ou <http://selenium-release.storage.googleapis.com/3.4/IEDriverServer_x64_3.4.0.zip> versão 64bits.
 *	Atom: Editor de texto com funções úteis para escrever o código da automação de testes.
 
 
@@ -154,6 +156,25 @@ O Ruby entende estes momentos quando utilizamos as seguintes palavras chaves:
 *	Before
 *	After
 
+<h3>Configurando Profiles no arquivo cucumber.yml</h3>
+
+O arquivo cucumber.yml é utilizado para definir os profiles utilizados para nossa automação.
+
+
+![Passo 7](readme_images/yml.jpg?raw=true)
+
+
+
+É possível manter um profile default (para execução padrão dos teste), neste caso o navegador padrão é o chrome e o arquivo de massas é o dev.yaml. Também é possível executar outros profiles a partir dos profiles definidos no arquivo, por exemplo:
+Quero executar os testes no internet explorer e utilizar o arquivo de massa de dados de homologação, então ficaria assim o nosso comando:
+
+´´´´bash
+cucumber -p internet_explorer -p hmg
+´´´´
+
+Os profiles podem ser usados para diversas configurações como ambiente, massa, browser, entre outros.
+
+
 <h3>Utilizando Tags</h3>
 
 Utilizamos a tag para diferenciar os cenários por grupos, funcionalidades ou etapas de testes. As tags são inseridas na linha de cima do nome do cenário.
@@ -170,7 +191,7 @@ Executando os testes automatizados
 
 Para executar o testes automatizados usaremos alguns comandos a partir da pasta raiz do nosso projeto.
 
-*	Para execução de todos os cenários implementados utilizamos o seguinte código:
+*	Para execução de todos os cenários implementados com o navegador chrome padrão utilizamos o seguinte código:
 ````bash
 cucumber
 ````
@@ -180,6 +201,17 @@ Resultado:
 ![Passo 2](readme_images/cucumber.png?raw=true)
 
 Todos os testes são executados.
+
+* Para a execução utilizando outro navegador por exemplo firefox, utilizamos o seguinte comando:
+````bash
+cucumber -p firefox -p dev
+````
+
+Obs: Os profiles são configurados no arquivo cucumber.yml
+ O comando -p é utilizado para indicar o profile utilizado para executar os testes, por exemplo:
+-p firefox quer dizer que ao executar os teste ele utilizará o profile do firefox.
+-p dev quer dizer que o projeto tem um profile chamado dev, esse profile é um arquivo de configuração onde você pode guardar as massas de teste. Neste projeto eu utilizei dois arquivos de configuração.
+O arquivo dev.yaml e hmg.yaml onde eu tenho minhas massas que são carregadas quando executo os testes.
 
 *	Para execução de algum cenário específico utilizamos as tags:
 ````bash
@@ -198,13 +230,13 @@ cucumber --format html --out report.html
 
 Resultado:
 
-![Passo 3](readme_images/report.png?raw=true)
+![Passo 4](readme_images/report.png?raw=true)
 
 Na pasta raiz do projeto é gerado um arquivo HTML com o report dos cenários de testes.
 
 Basta abrir no seu navegador e visualizar o resultado.
 
-![Passo 4](readme_images/report1.png?raw=true)
+![Passo 5](readme_images/report1.png?raw=true)
 
 Report criado com screenshot ao final da execução de cada cenário.
 
