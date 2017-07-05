@@ -8,11 +8,27 @@ require 'faker'
 
 include Capybara::DSL
 
-
+BROWSER = ENV['BROWSER']
 ENVIRONMENT_TYPE = ENV['ENVIRONMENT_TYPE']
 
+
 Capybara.register_driver :selenium do |app|
-	Capybara::Selenium::Driver.new(app, :browser => :chrome, args: ["--start-maximized"])
+	if BROWSER.eql?('chrome')
+	    Capybara::Selenium::Driver.new(app, :browser => :chrome,
+	    :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.chrome(
+	      'chromeOptions' => {
+	        'args' => [ "--start-maximized" ]
+	      }
+	    )
+	)	
+	elsif BROWSER.eql?('internet_explorer')
+	    Capybara::Selenium::Driver.new(app, :browser => :internet_explorer,
+	    :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.internet_explorer(
+	    'ignoreProtectedModeSettings' => true))
+
+	elsif BROWSER.eql?('firefox')
+    	Capybara::Selenium::Driver.new(app, :browser => :firefox)
+  	end
 end
 
 Capybara.configure do |config|

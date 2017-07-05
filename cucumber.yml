@@ -1,3 +1,6 @@
-default: --no-source --color --format pretty
+default: -p chrome -p dev
 dev: ENVIRONMENT_TYPE=dev
 hmg: ENVIRONMENT_TYPE=hmg
+chrome: BROWSER=chrome
+internet_explorer: BROWSER=internet_explorer
+firefox: BROWSER=firefox
