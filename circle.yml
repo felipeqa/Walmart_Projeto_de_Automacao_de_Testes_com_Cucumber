@@ -5,11 +5,10 @@ machine:
    - docker
 dependencies:
  pre:
-   - apt-get install -g chromedriver@2.30
    - gem install selenium-webdriver
  override:
    - gem install bundler
    - bundle install
 test:
  override:
-   - cucumber -p chrome -p dev -t @back --format json --out /tmp/circle-junit.IwSQ7Vx/cucumber/cucumber.cucumber
+   - cucumber -p firefox -p dev -t @back --format json --out /tmp/circle-junit.IwSQ7Vx/cucumber/cucumber.cucumber
