@@ -1,7 +1,7 @@
 require 'rspec'
 require 'httparty'
 require 'cucumber'
-require 'selenium/webdriver'
+require 'selenium-webdriver'
 require 'capybara/dsl'
 require 'site_prism'
 require 'faker'
@@ -20,7 +20,7 @@ Capybara.register_driver :selenium do |app|
 	        'args' => [ "--start-maximized" ]
 	      }
 	    )
-	)	
+	)
 	elsif BROWSER.eql?('internet_explorer')
 	    Capybara::Selenium::Driver.new(app, :browser => :internet_explorer,
 	    :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.internet_explorer(
