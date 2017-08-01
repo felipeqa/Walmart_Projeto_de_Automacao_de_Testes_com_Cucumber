@@ -10,6 +10,7 @@ include Capybara::DSL
 
 BROWSER = ENV['BROWSER']
 ENVIRONMENT_TYPE = ENV['ENVIRONMENT_TYPE']
+CONFIG = YAML.load_file(File.dirname(__FILE__) + "/config/#{ENVIRONMENT_TYPE}.yaml")
 
 
 Capybara.register_driver :selenium do |app|
