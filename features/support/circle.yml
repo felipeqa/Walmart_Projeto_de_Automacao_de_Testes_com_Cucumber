@@ -1,0 +1,23 @@
+machine:
+ ruby:
+   version: ruby-2.2.2
+ services:
+   - docker
+dependencies:
+ pre:
+   - sudo apt-get install libxss1 libappindicator1 libindicator7
+   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+   - sudo dpkg -i google-chrome*.deb
+   - sudo apt-get install -f
+   - sudo apt-get install jq nodejs curl -qy
+   - npm install -g geckodriver
+   - npm install -g chromedriver@2.30
+   - gem install selenium-webdriver
+   - curl -sSL https://get.rvm.io | bash -s stable --ruby=2.2.2
+ override:
+   - rvm use .
+   - gem install bundler
+   - bundle install
+test:
+ override:
+   - cucumber -p chrome -p dev -t @back
