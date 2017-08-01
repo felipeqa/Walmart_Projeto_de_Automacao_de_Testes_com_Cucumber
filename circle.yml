@@ -11,4 +11,4 @@ dependencies:
    - bundle install
 test:
  override:
-   - cucumber -p firefox -p dev -t @back --format json --out /tmp/circle-junit.IwSQ7Vx/cucumber/cucumber.cucumber
+   - cucumber -p firefox -p dev -t @back
