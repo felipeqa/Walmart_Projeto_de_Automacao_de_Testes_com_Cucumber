@@ -6,7 +6,7 @@ require 'capybara/dsl'
 require 'site_prism'
 require 'faker'
 
-include Capybara::DSL
+World Capybara::DSL
 
 BROWSER = ENV['BROWSER']
 ENVIRONMENT_TYPE = ENV['ENVIRONMENT_TYPE']
