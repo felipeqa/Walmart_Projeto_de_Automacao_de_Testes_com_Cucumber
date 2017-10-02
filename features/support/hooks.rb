@@ -1,5 +1,5 @@
 Before do
-	CONFIG = YAML.load_file(File.dirname(__FILE__) + "/config/#{ENVIRONMENT_TYPE}.yaml")
+	
 	Capybara.reset_sessions!
 end
 

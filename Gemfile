@@ -7,4 +7,4 @@ gem 'faker'
 gem 'httparty'
 gem 'site_prism'
 gem 'pry'
-
+gem 'selenium-webdriver'

@@ -1,7 +1,7 @@
 require 'rspec'
 require 'httparty'
 require 'cucumber'
-require 'selenium/webdriver'
+require 'selenium-webdriver'
 require 'capybara/dsl'
 require 'site_prism'
 require 'faker'
@@ -10,6 +10,7 @@ include Capybara::DSL
 
 BROWSER = ENV['BROWSER']
 ENVIRONMENT_TYPE = ENV['ENVIRONMENT_TYPE']
+CONFIG = YAML.load_file(File.dirname(__FILE__) + "/config/#{ENVIRONMENT_TYPE}.yaml")
 
 
 Capybara.register_driver :selenium do |app|
@@ -20,7 +21,7 @@ Capybara.register_driver :selenium do |app|
 	        'args' => [ "--start-maximized" ]
 	      }
 	    )
-	)	
+	)
 	elsif BROWSER.eql?('internet_explorer')
 	    Capybara::Selenium::Driver.new(app, :browser => :internet_explorer,
 	    :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.internet_explorer(

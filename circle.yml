@@ -1,0 +1,18 @@
+machine:
+ ruby:
+   version: ruby-2.3.4
+ services:
+   - docker
+dependencies:
+ pre:
+   - wget https://github.com/mozilla/geckodriver/releases/download/v0.17.0/geckodriver-v0.17.0-linux64.tar.gz
+   - tar -xvzf geckodriver*
+   - chmod +x geckodriver
+   - sudo mv geckodriver /usr/local/bin/
+   - gem install selenium-webdriver
+ override:
+   - gem install bundler
+   - bundle install
+test:
+ override:
+   - cucumber -p firefox -p dev -t @back
