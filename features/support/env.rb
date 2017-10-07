@@ -5,6 +5,7 @@ require 'selenium-webdriver'
 require 'capybara/dsl'
 require 'site_prism'
 require 'faker'
+require 'pry'
 
 World Capybara::DSL
 
